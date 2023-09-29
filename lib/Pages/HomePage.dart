@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:food_delivery/Pages/NavBarScreen.dart';
 
 
 
@@ -25,10 +25,10 @@ class HomePage extends StatelessWidget {
          width: 37,
          child: IconButton(
             onPressed: () {
-              /* Navigator.push(
+              Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) =>NavBar()),
-              ); */
+              );
             },
             icon: Icon(Icons.menu, size: 30,color: Colors.black,)),
         margin: EdgeInsets.all(10),
@@ -41,10 +41,10 @@ class HomePage extends StatelessWidget {
          alignment: Alignment.center,
          child: IconButton(
             onPressed: () {
-              /* Navigator.push(
+              Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) =>NavBar()),
-              ); */
+              );
             },
             icon: Icon(Icons.notifications_active, size: 25,color: Colors.black,)),
         margin: EdgeInsets.all(10),
@@ -55,7 +55,23 @@ class HomePage extends StatelessWidget {
         ],
       ) ,
   
-             );
+      
+      bottomNavigationBar: BottomNavigationBar(
+         
+          items:  [
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home_outlined),
+          label: 'Home',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.bike_scooter_sharp),
+          label: 'Orders',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.wallet),
+          label: 'Payment',
+        ),
+      ],),
+       );
   }
 }
-
