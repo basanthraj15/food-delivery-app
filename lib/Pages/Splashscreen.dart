@@ -33,7 +33,7 @@ class SplashScreen extends StatelessWidget {
               
               style: ElevatedButton.styleFrom(
                fixedSize: Size(150,50),
-                backgroundColor: Colors.yellow,
+                backgroundColor: Colors.red,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
@@ -71,7 +71,7 @@ class splashImageWidget extends StatelessWidget {
                   bottomRight: Radius.circular(60),
                 ),
                 child: Image.asset(
-                  'assets/black.jpg',
+                  'assets/food.jpg',
                   fit: BoxFit.fill,
                 ))),
         SplashScreenTextWidget()
