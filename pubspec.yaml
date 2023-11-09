@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.2
 
   flutter_native_splash: ^2.3.3
+  email_validator: ^2.1.16
+  connectivity_plus: ^4.0.1
    
 
 dev_dependencies:
@@ -65,8 +67,10 @@ flutter:
 
  
   assets:
-   - assets/black.jpg
-   - assets/food.jpg
+   - assets\black.jpg
+   - assets\food.jpg
+   - assets\google.png
+   - assets\login.jpg
   
 
   # An image asset can refer to one or more resolution-specific "variants", see

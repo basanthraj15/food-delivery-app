@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:food_delivery/Pages/HomePage.dart';
+import 'package:food_delivery/Pages/LoginScreen.dart';
 
 
 class SplashScreen extends StatelessWidget {
@@ -26,7 +27,7 @@ class SplashScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => HomePage()),
+                  MaterialPageRoute(builder: (context) => LoginScreen()),
                 );
               },
               child: Text("Get Started"),
