@@ -147,7 +147,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             padding: const EdgeInsets.only(left: 200),
                             child: TextButton(
                                 child: Text(
-                                  'Recover Password',
+                                  'Remember me',
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.w500),
