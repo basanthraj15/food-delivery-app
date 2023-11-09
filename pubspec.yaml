@@ -71,6 +71,9 @@ flutter:
    - assets\food.jpg
    - assets\google.png
    - assets\login.jpg
+   - assets\login2.jpg
+   - assets\phone.png
+   
   
 
   # An image asset can refer to one or more resolution-specific "variants", see

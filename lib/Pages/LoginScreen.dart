@@ -31,7 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
           /*  child:Form(
           key: formKey, */
           Image.asset(
-            'assets/login.jpg',
+            'assets/login2.jpg',
             fit: BoxFit.cover,
             height: double.infinity,
             width: double.infinity,
@@ -48,7 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 10, right: 10, top: 180,bottom: 50),
+            padding: const EdgeInsets.only(left: 10, right: 10, top: 180,bottom: 20),
             child: ClipRRect(
               borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(30),
@@ -186,9 +186,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     ClipRRect(
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                       child: Container(
-                        height: 59,
+                        height: 45,
                         width: 350,
-                        color: Colors.white,
+                        color: Colors.grey,
                         child: Row(
                           children: [
                             Padding(
@@ -197,7 +197,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 padding: const EdgeInsets.only(left: 40.0),
                                 child: Image.asset(
                                   'assets/google.png',
-                                  height: 30,
+                                  height: 20,
                                 ),
                               ),
                             ),
@@ -214,7 +214,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 child: Text(
                                   'Continue with Google',
                                   style: TextStyle(
-                                      fontSize: 18,
+                                      fontSize: 15,
                                       color: Color.fromARGB(255, 83, 76, 76),
                                       fontWeight: FontWeight.w700),
                                 )),
@@ -223,7 +223,46 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     SizedBox(
-                      height: 50,
+                      height: 20,
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                      child: Container(
+                        height: 45,
+                        width: 350,
+                        color: Colors.grey,
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 40.0),
+                                child: Image.asset(
+                                  'assets/phone.png',
+                                  height: 20,
+                                ),
+                              ),
+                            ),
+                            TextButton(
+                                onPressed: () async {
+                                  
+                                  /* Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const HomeScreen()),
+                                  ); */
+                                },
+                                child: Text(
+                                  'Continue with Phone',
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      color: Color.fromARGB(255, 83, 76, 76),
+                                      fontWeight: FontWeight.w700),
+                                )),
+                          ],
+                        ),
+                      ),
                     ),
                     Container(
                       child: Row(
