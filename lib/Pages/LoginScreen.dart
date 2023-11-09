@@ -35,7 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
             fit: BoxFit.cover,
             height: double.infinity,
             width: double.infinity,
-            opacity: const AlwaysStoppedAnimation(.8),
+            opacity: const AlwaysStoppedAnimation(2),
           ),
           const Padding(
             padding: EdgeInsets.only(top: 130, left: 30),
@@ -48,11 +48,13 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 10, right: 10, top: 180),
+            padding: const EdgeInsets.only(left: 10, right: 10, top: 180,bottom: 50),
             child: ClipRRect(
               borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(30),
                 topRight: Radius.circular(30),
+                bottomLeft: Radius.circular(30),
+                bottomRight: Radius.circular(30),
               ),
               child: Container(
                 height: double.infinity,
