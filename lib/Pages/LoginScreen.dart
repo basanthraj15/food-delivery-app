@@ -109,7 +109,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     SizedBox(
-                      height: 14,
+                      height: 18,
                     ),
                     ClipRRect(
                       borderRadius: BorderRadius.all(Radius.circular(15)),
@@ -187,8 +187,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                       child: Container(
                         height: 45,
-                        width: 350,
-                        color: Colors.grey,
+                        width: 320,
+                        color: Colors.white,
                         child: Row(
                           children: [
                             Padding(
@@ -229,8 +229,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                       child: Container(
                         height: 45,
-                        width: 350,
-                        color: Colors.grey,
+                        width: 320,
+                        color: Colors.white,
                         child: Row(
                           children: [
                             Padding(
