@@ -1,9 +1,8 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
+import 'package:food_delivery/Pages/HomePage.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-
-
 
 
 class LoginScreen extends StatefulWidget {
@@ -11,9 +10,11 @@ class LoginScreen extends StatefulWidget {
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
+
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  bool isChecked = false;
   bool _isSecurePassword = true;
   final _emailcontroller = TextEditingController();
   final _passwordcontroller = TextEditingController();
@@ -27,6 +28,14 @@ class _LoginScreenState extends State<LoginScreen> {
   }
   void createBox()async{
     box1 = await Hive.openBox('logindata');
+  }
+  void getdata()async{
+    if(box1.get(_emailcontroller)!=null){
+
+    }
+    if(box1.get(_passwordcontroller)!=null){
+      
+    }
   }
 
   void validateEmail() {
@@ -58,7 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
             opacity: const AlwaysStoppedAnimation(2),
           ),
           const Padding(
-            padding: EdgeInsets.only(top: 130, left: 30),
+            padding: EdgeInsets.only(top: 110, left: 30),
             child: Text(
               'Hola!',
               style: TextStyle(
@@ -135,18 +144,21 @@ class _LoginScreenState extends State<LoginScreen> {
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                       child: ElevatedButton(
                         onPressed: () {
-                          /* Navigator.push(
+                          Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const HomeScreen()),
-                            ); */
+                                  builder: (context) => const HomePage()),
+                            );
+                            login();
                          
-                          /* {
+                         /*  {
                             if(formKey.currentState!.validate()){
                               final SnackBar = SnackBar(content: Text("Please wait"));
                               _scaffoldkey.currentState!.showSnackBar(SnackBar);
                             }                           
-                          }         */
+                          }
+                              */ 
+
                         },
                         style: ElevatedButton.styleFrom(
                           foregroundColor: Colors.white,
@@ -163,29 +175,29 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 3,
                     ),
                     Row(
-                      children: [
-                        Container(
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 200),
-                            child: TextButton(
-                                child: Text(
-                                  'Remember me',
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [                        
+                          
+                        Text('Remember me',
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.w500),
                                 ),
-                                onPressed: () {
-                                  /* Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const ForgotPasswordScreen()),
-                                  ); */
-                                }),
-                          ),
-                        )
+                                Checkbox(
+                                  value:isChecked,
+                                  activeColor:Colors.red,
+                                onChanged:(value){
+                                  isChecked = !isChecked;
+                                  setState(() {
+                                    
+                                  });
+                                },
+                                      
+                          )                                           
                       ],
-                    ),
+                ),
+                  
+                    
                     SizedBox(
                       height: 10,
                     ),
@@ -337,5 +349,11 @@ class _LoginScreenState extends State<LoginScreen> {
           : Icon(Icons.visibility_off),
       color: Colors.grey,
     );
+  }
+  void login(){
+    if(isChecked){
+      box1.put('_emailcontroller', _emailcontroller.text);
+      box1.put('_passwordcontroller', _passwordcontroller.text);
+    }
   }
 }
