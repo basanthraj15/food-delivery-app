@@ -1,4 +1,11 @@
+import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+
+
+
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -11,14 +18,27 @@ class _LoginScreenState extends State<LoginScreen> {
   final _emailcontroller = TextEditingController();
   final _passwordcontroller = TextEditingController();
 
- /*  void validateEmail() {
+  late Box box1;
+
+  @override
+  void initState(){
+    super.initState();
+    createBox();
+  }
+  void createBox()async{
+    box1 = await Hive.openBox('logindata');
+  }
+
+  void validateEmail() {
     final bool isValid = EmailValidator.validate(_emailcontroller.text.trim());
     if (isValid) {
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text("Please Enter a Valid Email and Password")));
     }
-  } */
+  }
+
+
 
   final formKey = GlobalKey<FormState>();
   String name = "";
