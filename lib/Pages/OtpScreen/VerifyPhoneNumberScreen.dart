@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:food_delivery/Pages/HomePage.dart';
 import 'package:food_delivery/Pages/LoginScreen.dart';
+import 'package:food_delivery/Pages/OtpScreen/OtpScreen.dart';
 
 
 /* import 'package:pinput/pinput.dart'; */
@@ -113,12 +114,12 @@ class _VerifyNumberState extends State<VerifyNumber> {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {
-                        /* var _PhoneNumber = _PhoneNumbercontroller.text;
+                        var _PhoneNumber = _PhoneNumbercontroller.text;
                         print("PhoneNumber:" + _PhoneNumber);
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => OtpScreen()),
-                        ); */
+                        );
                       },
                       child: Text(
                         'Send the code',

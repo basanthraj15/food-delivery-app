@@ -53,6 +53,7 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   hive:
   hive_flutter:
+  pinput: ^2.2.31
   
 
 
