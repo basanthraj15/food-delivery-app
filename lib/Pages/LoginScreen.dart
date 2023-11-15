@@ -28,13 +28,21 @@ class _LoginScreenState extends State<LoginScreen> {
   }
   void createBox()async{
     box1 = await Hive.openBox('logindata');
+    getdata();
   }
   void getdata()async{
     if(box1.get(_emailcontroller)!=null){
+      _emailcontroller.text=box1.get(_emailcontroller);
+      isChecked=true;
+      setState(() {       
+      });
 
     }
     if(box1.get(_passwordcontroller)!=null){
-      
+      _passwordcontroller.text=box1.get(_passwordcontroller);
+      isChecked=true;
+      setState(() {        
+      });
     }
   }
 
@@ -188,8 +196,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   activeColor:Colors.red,
                                 onChanged:(value){
                                   isChecked = !isChecked;
-                                  setState(() {
-                                    
+                                  setState(() {                                    
                                   });
                                 },
                                       
