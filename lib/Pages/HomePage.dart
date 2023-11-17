@@ -54,7 +54,23 @@ class HomePage extends StatelessWidget {
         )),
         ],
       ) ,
-  
+     /*  body:SingleChildScrollView(
+        child:padding(
+        padding:const EdgeInsets.symmetric(horizontal: 20),
+        child:Column(
+          children: [
+            const SizedBox(height:64),
+            Row(children: [
+              Text("Goodmorning Basanth!!",style: TextStyle(
+                color: Colors.black,
+                fontSize: 20,
+                fontWeight: FontWeight.w800
+              ),)
+            ],)
+          ],
+        ) */
+      /* ),
+   */
       
       bottomNavigationBar: BottomNavigationBar(
          
@@ -72,6 +88,7 @@ class HomePage extends StatelessWidget {
           label: 'Payment',
         ),
       ],),
-       );
+      );
+       /* ); */
   }
 }

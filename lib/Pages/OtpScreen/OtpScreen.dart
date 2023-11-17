@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:food_delivery/Pages/HomePage.dart';
 import 'package:food_delivery/Pages/LoginScreen.dart';
+import 'package:food_delivery/Pages/OnboardingScreen/OnboardingScreen.dart';
 import 'package:food_delivery/Pages/OtpScreen/VerifyPhoneNumberScreen.dart';
 import 'package:pinput/pinput.dart';
 
@@ -105,7 +106,7 @@ class _OtpScreenState extends State<OtpScreen> {
                       onPressed: () {
                         Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => HomePage()),
+                MaterialPageRoute(builder: (context) => OnboardingScreen()),
               );
                       },
                       child: Text(
