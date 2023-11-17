@@ -50,20 +50,40 @@ PageController controller= PageController();
   Widget build(BuildContext context) {
     var media = MediaQuery.of( context).size;
     return Scaffold(
-      body:Stack(children: [
+      body:Stack(
+        alignment: Alignment.center,
+        children: [
         PageView.builder(
           controller: controller,
           itemCount: pageArr.length,
           itemBuilder: ((context, index) {
             var pObj = pageArr[index] as Map? ?? {};
           return Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
             children: [
               Container(
                 width: media.width,
-                height: media.height,
+                height: media.width,
                 alignment: Alignment.center,
                 child: Image.asset(pObj["image"].toString(),width: media.width * 0.65,fit:BoxFit.contain),
               ),
+              SizedBox(height:media.width * 0.1),
+              Text(
+                pObj["title"].toString(),
+              style: TextStyle(color: Colors.black,
+              fontSize:28,
+              fontWeight: FontWeight.w800)
+              ),
+              SizedBox(height:media.width * 0.1),
+              Text(
+                pObj["subtitle"].toString(),
+                textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.grey,
+              fontSize:13,
+              fontWeight: FontWeight.w500)
+              ),
+               SizedBox(height:media.width * 0.1),
             ],
           );
 
