@@ -56,11 +56,15 @@ PageController controller= PageController();
           itemCount: pageArr.length,
           itemBuilder: ((context, index) {
             var pObj = pageArr[index] as Map? ?? {};
-          return Container(
-            width: media.width,
-            height: media.height,
-            alignment: Alignment.center,
-            child: Image.asset(pObj["image"].toString(),width: media.width * 0.7,fit:BoxFit.contain),
+          return Column(
+            children: [
+              Container(
+                width: media.width,
+                height: media.height,
+                alignment: Alignment.center,
+                child: Image.asset(pObj["image"].toString(),width: media.width * 0.65,fit:BoxFit.contain),
+              ),
+            ],
           );
 
 
