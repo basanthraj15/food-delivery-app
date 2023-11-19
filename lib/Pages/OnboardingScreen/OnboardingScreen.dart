@@ -80,7 +80,7 @@ PageController controller= PageController();
                 pObj["subtitle"].toString(),
                 textAlign: TextAlign.center,
               style: TextStyle(color: Colors.grey,
-              fontSize:13,
+              fontSize:14,
               fontWeight: FontWeight.w500)
               ),
                SizedBox(height:media.width * 0.1),
