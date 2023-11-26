@@ -89,6 +89,53 @@ PageController controller= PageController();
 
 
    } )),
+    Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+      
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+
+        children: pageArr.map((e) {
+        var index=pageArr.indexOf(e);
+        return Container(
+          margin: const EdgeInsets.symmetric(horizontal: 4),
+          height: 8,
+          width: 8,
+          decoration: BoxDecoration(color:Colors.red ,borderRadius: BorderRadius.circular(4)),
+        );
+      }).toList(),),
+
+
+      Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 25),
+        child: ElevatedButton(
+                onPressed: () {
+                 if(selectPage >=2){
+                  //homee
+                 }else{
+                  //next page go
+                  setState(() {
+                    selectPage= selectPage +1;
+                    controller.animateToPage(selectPage, duration:Duration(milliseconds: 500) , curve: Curves.bounceInOut);
+                  });
+                 }
+                },
+                child: Text("Next"),
+                
+                style: ElevatedButton.styleFrom(
+                 fixedSize: Size(150,50),
+                  backgroundColor: Colors.red,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+              ),
+      ),
+      SizedBox(height:media.width* 0.2),
+    ],),
+    
       ],
       ),
     );
