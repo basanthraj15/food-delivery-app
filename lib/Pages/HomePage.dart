@@ -46,7 +46,7 @@ class HomePage extends StatelessWidget {
                 MaterialPageRoute(builder: (context) =>NavBar()),
               );
             },
-            icon: Icon(Icons.notifications_active, size: 25,color: Colors.black,)),
+            icon: Icon(Icons.notifications_active, size: 24,color: Colors.black,)),
         margin: EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: Colors.white,
