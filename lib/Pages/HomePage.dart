@@ -51,33 +51,18 @@ class HomePage extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(20)
-        )),
+        ),),
         ],
-      ) ,
-     /*  body:SingleChildScrollView(
-        child:padding(
-        padding:const EdgeInsets.symmetric(horizontal: 20),
-        child:Column(
-          children: [
-            const SizedBox(height:64),
-            Row(children: [
-              Text("Goodmorning Basanth!!",style: TextStyle(
-                color: Colors.black,
-                fontSize: 20,
-                fontWeight: FontWeight.w800
-              ),)
-            ],)
-          ],
-        ) */
-      /* ),
-   */
-      
+      ),  
+    
       bottomNavigationBar: BottomNavigationBar(
          
           items:  [
-        BottomNavigationBarItem(
+            
+        BottomNavigationBarItem(        
           icon: Icon(Icons.home_outlined),
           label: 'Home',
+          
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.bike_scooter_sharp),
@@ -86,8 +71,12 @@ class HomePage extends StatelessWidget {
         BottomNavigationBarItem(
           icon: Icon(Icons.wallet),
           label: 'Payment',
+               
         ),
-      ],),
+       
+      ], 
+           ),
+      
       );
        /* ); */
   }

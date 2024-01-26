@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/Pages/HomePage.dart';
 import 'package:food_delivery/Pages/LoginScreen.dart';
+import 'package:food_delivery/Pages/PaymentScreen.dart';
 
 
 class NavBar extends StatelessWidget {
@@ -105,12 +106,12 @@ class NavBar extends StatelessWidget {
             ListTile(
                 leading: Icon(Icons.download),
                 title: Text('Download App'),
-                onTap:null, /* () async {                 
+                onTap:() async { 
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => DownloadScreen()),
+                    MaterialPageRoute(builder: (context) => PaymentScreen()),
                   );
-                } */),
+                } ),
             Divider(),
             ListTile(
                 leading: Icon(Icons.exit_to_app),
