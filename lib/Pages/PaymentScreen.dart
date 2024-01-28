@@ -5,9 +5,62 @@ class PaymentScreen extends StatelessWidget {
    PaymentScreen({super.key});
   final _amountcontroller = TextEditingController();
 
+  showAlertDialog(BuildContext context, String message, String heading,
+      String buttonAcceptTitle, String buttonCancelTitle) {
+    // set up the buttons
+    Widget cancelButton = TextButton(
+      child: Text(buttonCancelTitle),
+      onPressed: () {
+        Navigator.pop(context);
+      },
+    );
+    Widget continueButton = TextButton(
+      child: Text(buttonAcceptTitle),
+      onPressed: () {
+        Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage()),
+                );
+
+      },
+    );
+
+    
+    AlertDialog alert = AlertDialog(
+      title: Text(heading),
+      content: Text(message),
+      actions: [
+        cancelButton,
+        continueButton,
+      ],
+    );
+
+    
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.red,
+        elevation: 0,
+        leading: IconButton(
+          onPressed: () async {
+            showAlertDialog(context, 'Are you sure you want to cancel payment?', "Foodiiee" , "Ok", "Cancel");
+          },
+         
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ),
+        ),
+      ),
         body: SafeArea(
             child: Container(
       height: 300,
