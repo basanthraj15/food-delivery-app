@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery/Pages/HomePage.dart';
 
 class PaymentScreen extends StatelessWidget {
-  const PaymentScreen({super.key});
+   PaymentScreen({super.key});
+  final _amountcontroller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +18,27 @@ class PaymentScreen extends StatelessWidget {
           const SizedBox(
             height: 80,
           ),
+          Padding(
+                      padding:
+                          const EdgeInsets.only(left: 8.0, right: 8.0, top: 15),
+                      child: TextField(
+                        
+                        controller: _amountcontroller,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                          ),
+                          filled: true,
+                          hintStyle: TextStyle(
+                            color: Colors.grey,
+                          ),
+                          hintText: "Enter Amount",
+                          fillColor: Colors.white,
+                          
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 40,),
           ElevatedButton(
             onPressed: () {
               Navigator.push(
