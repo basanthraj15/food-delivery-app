@@ -19,6 +19,17 @@ class _LoginScreenState extends State<LoginScreen> {
   bool _isSecurePassword = true;
   final _emailcontroller = TextEditingController();
   final _passwordcontroller = TextEditingController();
+  bool _isNotValidate = false;
+
+  void registerUser() async {
+    if (_emailcontroller.text.isNotEmpty && _passwordcontroller.text.isNotEmpty){
+
+    }else{
+      setState(() {
+        _isNotValidate = true;
+      });
+    }
+  }
 
   late Box box1;
 
@@ -95,8 +106,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 bottomRight: Radius.circular(30),
               ),
               child: Container(
-                height: double.infinity,
-                width: double.infinity,
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
                 color: Colors.grey.withOpacity(.4),
                 child: Column(
                   children: [
@@ -105,7 +116,10 @@ class _LoginScreenState extends State<LoginScreen> {
                           const EdgeInsets.only(left: 8.0, right: 8.0, top: 30),
                       child: TextFormField(
                         controller: _emailcontroller,
+                        keyboardType: TextInputType.text,
                         decoration: InputDecoration(
+                          errorStyle: TextStyle(color: Colors.grey),
+                          errorText: _isNotValidate ? "Enter a valid email id": null,
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15.0),
                             ),
@@ -114,7 +128,8 @@ class _LoginScreenState extends State<LoginScreen> {
                               color: Colors.grey,
                             ),
                             hintText: "Email",
-                            fillColor: Colors.white),
+                            fillColor: Colors.white,
+                            ),
                         validator: (value) {
                           if (value!.isEmpty ||
                               !RegExp(r'^ [\W-\.]+@([\W-]+\.)+[\w-]{2,4}')
@@ -133,6 +148,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         obscureText: _isSecurePassword,
                         controller: _passwordcontroller,
                         decoration: InputDecoration(
+                          errorStyle: TextStyle(color: Colors.grey),
+                          errorText: _isNotValidate ? "Enter correct Password": null,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15.0),
                           ),
@@ -159,6 +176,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                   builder: (context) => const HomePage()),
                             );
                             login();
+
+                            registerUser();
                          
                          /*  {
                             if(formKey.currentState!.validate()){
