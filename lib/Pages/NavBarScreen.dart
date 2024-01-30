@@ -38,7 +38,7 @@ class NavBar extends StatelessWidget {
               currentAccountPicture: CircleAvatar(
                 child: ClipOval(
                   child: Image.asset(
-                    'assets/images/User.png',
+                    'assets/User.png',
                     width: 90,
                     height: 90,
                     fit: BoxFit.cover,
@@ -50,12 +50,12 @@ class NavBar extends StatelessWidget {
               ),
               decoration: BoxDecoration(
                 color: Colors.red,
-                image: DecorationImage(
+                /* image: DecorationImage(
                   image: AssetImage(
-                    'assets/images/must.jpg',
+                    'assets/User.jpg',
                   ),
                   fit: BoxFit.cover,
-                ),
+                ), */
               ),
             ),
             ListTile(

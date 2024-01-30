@@ -4,6 +4,7 @@ import 'package:food_delivery/Pages/HomePage.dart';
 import 'package:food_delivery/Pages/OtpScreen/VerifyPhoneNumberScreen.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:http/http.dart';
 
 
 class LoginScreen extends StatefulWidget {
