@@ -16,9 +16,9 @@ class MyApp extends StatelessWidget {
     return  MaterialApp(
       title: 'Flutter App',
       theme:  ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.yellow,
         appBarTheme: AppBarTheme(
-          color:  Colors.red,
+          color:  Colors.yellow,
         ),
       ),
        home:SplashScreen(),

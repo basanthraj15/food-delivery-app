@@ -34,7 +34,7 @@ class SplashScreen extends StatelessWidget {
               
               style: ElevatedButton.styleFrom(
                fixedSize: Size(150,50),
-                backgroundColor: Colors.red,
+                backgroundColor: Color.fromRGBO(248, 198, 33, 1),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),

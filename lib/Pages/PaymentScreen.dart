@@ -48,7 +48,7 @@ class PaymentScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red,
+        backgroundColor: Color.fromRGBO(248, 198, 33, 1),
         elevation: 0,
         leading: IconButton(
           onPressed: () async {
@@ -57,7 +57,7 @@ class PaymentScreen extends StatelessWidget {
          
           icon: Icon(
             Icons.arrow_back,
-            color: Colors.white,
+            color: Colors.black,
           ),
         ),
       ),
@@ -104,7 +104,7 @@ class PaymentScreen extends StatelessWidget {
             child: Text("Make Payment"),
             style: ElevatedButton.styleFrom(
               fixedSize: Size(280, 45),
-              backgroundColor: Colors.red,
+              backgroundColor:Color.fromRGBO(248, 198, 33, 1),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15),
               ),

@@ -190,8 +190,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
                         },
                         style: ElevatedButton.styleFrom(
-                          foregroundColor: Colors.white,
-                          backgroundColor: Colors.red,
+                          foregroundColor: Colors.black,
+                          backgroundColor: Color.fromRGBO(248, 198, 33, 1),
                           minimumSize: Size(350, 58),
                         ),
                         child: const Text(
@@ -214,7 +214,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ),
                                 Checkbox(
                                   value:isChecked,
-                                  activeColor:Colors.red,
+                                  activeColor:Colors.black,
                                 onChanged:(value){
                                   isChecked = !isChecked;
                                   setState(() {                                    
@@ -330,7 +330,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           SizedBox(width: 60),
                           Text(
                             "Don't have an account yet?",
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(color: Color.fromRGBO(248, 198, 33, 1)),
                           ),
                           TextButton(
                             onPressed: () {
@@ -345,7 +345,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               style: TextStyle(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 18,
-                                color: Colors.red,
+                                color: Colors.black,
                               ),
                             ),
                           ),

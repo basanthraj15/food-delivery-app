@@ -24,7 +24,7 @@ class NavBar extends StatelessWidget {
           },
           icon: Icon(
             Icons.arrow_back,
-            color: Colors.white,
+            color: Colors.black,
           ),
         ),
       ),
@@ -49,7 +49,7 @@ class NavBar extends StatelessWidget {
                 ),
               ),
               decoration: BoxDecoration(
-                color: Colors.red,
+                color: Color.fromRGBO(248, 198, 33, 1),
                 /* image: DecorationImage(
                   image: AssetImage(
                     'assets/User.jpg',
