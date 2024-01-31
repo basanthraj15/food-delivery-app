@@ -6,13 +6,11 @@ import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:http/http.dart';
 
-
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
-
 }
 
 class _LoginScreenState extends State<LoginScreen> {
@@ -23,9 +21,9 @@ class _LoginScreenState extends State<LoginScreen> {
   bool _isNotValidate = false;
 
   void registerUser() async {
-    if (_emailcontroller.text.isNotEmpty && _passwordcontroller.text.isNotEmpty){
-
-    }else{
+    if (_emailcontroller.text.isNotEmpty &&
+        _passwordcontroller.text.isNotEmpty) {
+    } else {
       setState(() {
         _isNotValidate = true;
       });
@@ -35,27 +33,26 @@ class _LoginScreenState extends State<LoginScreen> {
   late Box box1;
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
     createBox();
   }
-  void createBox()async{
+
+  void createBox() async {
     box1 = await Hive.openBox('logindata');
     getdata();
   }
-  void getdata()async{
-    if(box1.get(_emailcontroller)!=null){
-      _emailcontroller.text=box1.get(_emailcontroller);
-      isChecked=true;
-      setState(() {       
-      });
 
+  void getdata() async {
+    if (box1.get(_emailcontroller) != null) {
+      _emailcontroller.text = box1.get(_emailcontroller);
+      isChecked = true;
+      setState(() {});
     }
-    if(box1.get(_passwordcontroller)!=null){
-      _passwordcontroller.text=box1.get(_passwordcontroller);
-      isChecked=true;
-      setState(() {        
-      });
+    if (box1.get(_passwordcontroller) != null) {
+      _passwordcontroller.text = box1.get(_passwordcontroller);
+      isChecked = true;
+      setState(() {});
     }
   }
 
@@ -67,8 +64,6 @@ class _LoginScreenState extends State<LoginScreen> {
           SnackBar(content: Text("Please Enter a Valid Email and Password")));
     }
   }
-
-
 
   final formKey = GlobalKey<FormState>();
   String name = "";
@@ -98,7 +93,8 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 10, right: 10, top: 180,bottom: 20),
+            padding: const EdgeInsets.only(
+                left: 10, right: 10, top: 180, bottom: 20),
             child: ClipRRect(
               borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(30),
@@ -120,17 +116,18 @@ class _LoginScreenState extends State<LoginScreen> {
                         keyboardType: TextInputType.text,
                         decoration: InputDecoration(
                           errorStyle: TextStyle(color: Colors.grey),
-                          errorText: _isNotValidate ? "Enter a valid email id": null,
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15.0),
-                            ),
-                            filled: true,
-                            hintStyle: TextStyle(
-                              color: Colors.grey,
-                            ),
-                            hintText: "Email",
-                            fillColor: Colors.white,
-                            ),
+                          errorText:
+                              _isNotValidate ? "Enter a valid email id" : null,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                          ),
+                          filled: true,
+                          hintStyle: TextStyle(
+                            color: Colors.grey,
+                          ),
+                          hintText: "Email",
+                          fillColor: Colors.white,
+                        ),
                         validator: (value) {
                           if (value!.isEmpty ||
                               !RegExp(r'^ [\W-\.]+@([\W-]+\.)+[\w-]{2,4}')
@@ -150,7 +147,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         controller: _passwordcontroller,
                         decoration: InputDecoration(
                           errorStyle: TextStyle(color: Colors.grey),
-                          errorText: _isNotValidate ? "Enter correct Password": null,
+                          errorText:
+                              _isNotValidate ? "Enter correct Password" : null,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15.0),
                           ),
@@ -172,22 +170,21 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: ElevatedButton(
                         onPressed: () {
                           Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const HomePage()),
-                            );
-                            login();
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const HomePage()),
+                          );
+                          login();
 
-                            registerUser();
-                         
-                         /*  {
+                          registerUser();
+
+                          /*  {
                             if(formKey.currentState!.validate()){
                               final SnackBar = SnackBar(content: Text("Please wait"));
                               _scaffoldkey.currentState!.showSnackBar(SnackBar);
                             }                           
                           }
-                              */ 
-
+                              */
                         },
                         style: ElevatedButton.styleFrom(
                           foregroundColor: Colors.black,
@@ -205,27 +202,22 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
-                      children: [                        
-                          
-                        Text('Remember me',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w500),
-                                ),
-                                Checkbox(
-                                  value:isChecked,
-                                  activeColor:Colors.black,
-                                onChanged:(value){
-                                  isChecked = !isChecked;
-                                  setState(() {                                    
-                                  });
-                                },
-                                      
-                          )                                           
+                      children: [
+                        Text(
+                          'Remember me',
+                          style: TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.w500),
+                        ),
+                        Checkbox(
+                          value: isChecked,
+                          activeColor: Colors.black,
+                          onChanged: (value) {
+                            isChecked = !isChecked;
+                            setState(() {});
+                          },
+                        )
                       ],
-                ),
-                  
-                    
+                    ),
                     SizedBox(
                       height: 10,
                     ),
@@ -263,7 +255,6 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                             TextButton(
                                 onPressed: () async {
-                                  
                                   /* Navigator.push(
                                     context,
                                     MaterialPageRoute(
@@ -305,7 +296,6 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                             TextButton(
                                 onPressed: () async {
-                                  
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
@@ -330,7 +320,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           SizedBox(width: 60),
                           Text(
                             "Don't have an account yet?",
-                            style: TextStyle(color: Color.fromRGBO(248, 198, 33, 1)),
+                            style: TextStyle(color: Colors.white),
                           ),
                           TextButton(
                             onPressed: () {
@@ -353,8 +343,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     SizedBox(
-                      height: 25,
-                    ),                   
+                      height: 15,
+                    ),
                   ],
                 ),
               ),
@@ -378,8 +368,9 @@ class _LoginScreenState extends State<LoginScreen> {
       color: Colors.grey,
     );
   }
-  void login(){
-    if(isChecked){
+
+  void login() {
+    if (isChecked) {
       box1.put('_emailcontroller', _emailcontroller.text);
       box1.put('_passwordcontroller', _passwordcontroller.text);
     }

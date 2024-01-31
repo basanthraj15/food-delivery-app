@@ -6,7 +6,6 @@ import 'package:food_delivery/Pages/HomePage.dart';
 import 'package:food_delivery/Pages/LoginScreen.dart';
 import 'package:food_delivery/Pages/OtpScreen/OtpScreen.dart';
 
-
 /* import 'package:pinput/pinput.dart'; */
 
 class VerifyNumber extends StatefulWidget {
@@ -128,7 +127,7 @@ class _VerifyNumberState extends State<VerifyNumber> {
                         ),
                       ),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.red,
+                        backgroundColor: Color.fromRGBO(248, 198, 33, 1),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                       ),

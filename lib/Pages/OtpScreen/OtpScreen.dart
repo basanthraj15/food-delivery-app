@@ -8,8 +8,6 @@ import 'package:food_delivery/Pages/OnboardingScreen/OnboardingScreen.dart';
 import 'package:food_delivery/Pages/OtpScreen/VerifyPhoneNumberScreen.dart';
 import 'package:pinput/pinput.dart';
 
-
-
 class OtpScreen extends StatefulWidget {
   const OtpScreen({super.key});
 
@@ -50,7 +48,7 @@ class _OtpScreenState extends State<OtpScreen> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => LoginScreen()),
+                MaterialPageRoute(builder: (context) => VerifyNumber()),
               );
             },
             icon: Icon(
@@ -105,9 +103,10 @@ class _OtpScreenState extends State<OtpScreen> {
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => OnboardingScreen()),
-              );
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => LoginScreen()),
+                        );
                       },
                       child: Text(
                         'Verify Phone Number',
@@ -116,7 +115,7 @@ class _OtpScreenState extends State<OtpScreen> {
                         ),
                       ),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.red,
+                        backgroundColor: Color.fromRGBO(248, 198, 33, 1),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                       ),

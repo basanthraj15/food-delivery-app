@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/Pages/NavBarScreen.dart';
+import 'package:food_delivery/Pages/NotificationScreen.dart';
 import 'package:food_delivery/Pages/OrdersScreen.dart';
 import 'package:food_delivery/Pages/PaymentScreen.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -30,11 +31,11 @@ final List<Widget> _pages =[
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Food Delivery",
+          "FoodiEE",
           style: TextStyle(
               color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromRGBO(248, 198, 33, 1),
         elevation: 0.0,
         centerTitle: true,
         leading: Container(
@@ -54,7 +55,7 @@ final List<Widget> _pages =[
                 )),
             margin: EdgeInsets.all(10),
             decoration: BoxDecoration(
-                color: Colors.white, borderRadius: BorderRadius.circular(20))),
+                color: Color.fromRGBO(248, 198, 33, 1), borderRadius: BorderRadius.circular(20))),
         actions: [
           Container(
             alignment: Alignment.center,
@@ -62,7 +63,7 @@ final List<Widget> _pages =[
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => NavBar()),
+                    MaterialPageRoute(builder: (context) => NotificationScreen()),
                   );
                 },
                 icon: Icon(
@@ -72,11 +73,11 @@ final List<Widget> _pages =[
                 )),
             margin: EdgeInsets.all(10),
             decoration: BoxDecoration(
-                color: Colors.white, borderRadius: BorderRadius.circular(20)),
+                color: Color.fromRGBO(248, 198, 33, 1), borderRadius: BorderRadius.circular(20)),
           ),
         ],
       ),
-     /*  body: _pages[_selectedIndex], */
+      /*  body: _pages[_selectedIndex], */
       /* bottomNavigationBar: BottomNavigationBar( */
       /* currentIndex: _selectedIndex,
          onTap: _NavigateBottomBar,
@@ -107,54 +108,44 @@ bottomNavigationBar: BottomNavigationBar(
       ], 
            ), */
 
-      bottomNavigationBar: 
-      
-         Container(
-          height:85,
-          padding:EdgeInsets.all(15),
-          margin: EdgeInsets.symmetric(horizontal:8,vertical: 8),
-          decoration: BoxDecoration(
-            color: Colors.black,
-            borderRadius: BorderRadius.all(Radius.circular(50)),
-          ),
-             
-          
-            child: GNav(
-         
-              backgroundColor: Colors.black,
-              color: Colors.white,
-              activeColor: Color.fromRGBO(248, 198, 33, 1),
-              tabBackgroundColor: const Color.fromARGB(255, 40, 39, 39),
-              gap: 8,
-         
-              onTabChange: (index){
-                print(index);
-              },
-         
-         
-              padding: EdgeInsets.all(10),
-              tabs: const [
-                GButton(
-                  icon: Icons.home,
-                  text: 'Home',
-                ),
-                GButton(
-                  icon: Icons.bike_scooter_sharp,
-                  text: 'Orders',
-                ),
-                GButton(
-                  icon: Icons.history_outlined,
-                  text: 'History',
-                ),
-                GButton(
-                  icon: Icons.wallet,
-                  text: 'Wallet',
-                ),
-              ],
+      bottomNavigationBar: Container(
+        height: 85,
+        padding: EdgeInsets.all(15),
+        margin: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+        decoration: BoxDecoration(
+          color: Colors.black,
+          borderRadius: BorderRadius.all(Radius.circular(50)),
+        ),
+        child: GNav(
+          backgroundColor: Colors.black,
+          color: Colors.white,
+          activeColor: Color.fromRGBO(248, 198, 33, 1),
+          tabBackgroundColor: const Color.fromARGB(255, 40, 39, 39),
+          gap: 8,
+          onTabChange: (index) {
+            print(index);
+          },
+          padding: EdgeInsets.all(10),
+          tabs: const [
+            GButton(
+              icon: Icons.home,
+              text: 'Home',
             ),
-                 ),
-        
-      
+            GButton(
+              icon: Icons.bike_scooter_sharp,
+              text: 'Orders',
+            ),
+            GButton(
+              icon: Icons.history_outlined,
+              text: 'History',
+            ),
+            GButton(
+              icon: Icons.wallet,
+              text: 'Wallet',
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
