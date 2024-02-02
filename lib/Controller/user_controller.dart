@@ -6,8 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class UserController {
-
-  static User? user= FirebaseAuth.instance.currentUser;
+  static User? user = FirebaseAuth.instance.currentUser;
   static Future<User?> loginwithGoogle() async {
     final googleAccount = await GoogleSignIn().signIn();
 
@@ -23,12 +22,9 @@ class UserController {
     return UserCredential.user;
   }
 
-  Future<void> signOut() async{
+  static Future<void> signOut() async {
     await FirebaseAuth.instance.signOut();
     await GoogleSignIn().signOut();
-  return;
-  
-    
+    return;
   }
-  
 }

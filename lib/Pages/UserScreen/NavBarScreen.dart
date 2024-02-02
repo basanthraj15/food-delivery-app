@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/Controller/user_controller.dart';
 import 'package:food_delivery/Pages/MainScreens/HomePage.dart';
 import 'package:food_delivery/Pages/MainScreens/LoginScreen.dart';
 import 'package:food_delivery/Pages/UserScreen/PaymentScreen.dart';
-
 
 class NavBar extends StatelessWidget {
   const NavBar({super.key});
@@ -33,20 +33,21 @@ class NavBar extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: [
             UserAccountsDrawerHeader(
-              accountName: Text('Account Name'),
-              accountEmail: Text('Email id'),
+              accountName:Text(''),
+                  
+              accountEmail: Text(UserController.user?.displayName ?? ''),
               currentAccountPicture: CircleAvatar(
-                child: ClipOval(
+                foregroundImage:
+                    NetworkImage(UserController.user?.photoURL ?? '' ,scale: 1.0),
+                    
+                /* child: ClipOval(
                   child: Image.asset(
                     'assets/User.png',
                     width: 90,
                     height: 90,
                     fit: BoxFit.cover,
-                    /* loadingBuilder:(context,child,LoadingProgress)   {
-              return CircularProgressIndicator();
-            }      */
                   ),
-                ),
+                ), */
               ),
               decoration: BoxDecoration(
                 color: Color.fromRGBO(248, 198, 33, 1),
@@ -67,7 +68,8 @@ class NavBar extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.notifications),
               title: Text('Notifications'),
-              onTap: () => null,/* Navigator.push(
+              onTap: () => null,
+              /* Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => NotificationScreen()),
               ), */
@@ -91,7 +93,8 @@ class NavBar extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.settings),
               title: Text('Settings'),
-              onTap: () => null,/* Navigator.push(
+              onTap: () =>
+                  null, /* Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => SettingsScreen()),
               ), */
@@ -106,21 +109,24 @@ class NavBar extends StatelessWidget {
             ListTile(
                 leading: Icon(Icons.download),
                 title: Text('Download App'),
-                onTap:() async { 
+                onTap: () async {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => PaymentScreen()),
                   );
-                } ),
+                }),
             Divider(),
             ListTile(
                 leading: Icon(Icons.exit_to_app),
                 title: Text('Logout'),
-                onTap:() async {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => LoginScreen()),
-                  );
+                onTap: () async {
+                  await UserController.signOut();
+                  
+                  Navigator.of(
+                    context).pushReplacement
+                    (MaterialPageRoute(builder: (context) => LoginScreen()),
+                   );
+                
                 }),
           ],
         ),
