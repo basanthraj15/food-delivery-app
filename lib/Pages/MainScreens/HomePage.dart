@@ -114,7 +114,7 @@ bottomNavigationBar: BottomNavigationBar(
         margin: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
         decoration: BoxDecoration(
           color: Colors.black,
-          borderRadius: BorderRadius.all(Radius.circular(50)),
+          borderRadius: BorderRadius.all(const Radius.circular(50)),
         ),
         child: GNav(
           backgroundColor: Colors.black,

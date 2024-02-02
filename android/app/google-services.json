@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "423491205822",
+    "project_id": "foodiee-app-50f97",
+    "storage_bucket": "foodiee-app-50f97.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:423491205822:android:9aeb7a60edd249d2a5bcef",
+        "android_client_info": {
+          "package_name": "com.example.food_delivery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "423491205822-u74smsblm6hplu8vvahjvm4doembb9il.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.food_delivery",
+            "certificate_hash": "7948db33ceb10f66a4dd17e1b7639ab1cdb0cabb"
+          }
+        },
+        {
+          "client_id": "423491205822-9hag1hk83lect3gn48v6285sa6cq7ivo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiSt3hz7aA6VR3eXEy0eK576i4ftCvI5o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "423491205822-9hag1hk83lect3gn48v6285sa6cq7ivo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "423491205822-ap6ug1vr67al327afkkd6ej943h5u13f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.foodDelivery"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
