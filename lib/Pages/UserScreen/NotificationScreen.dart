@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/Pages/HomePage.dart';
+import 'package:food_delivery/Pages/MainScreens/HomePage.dart';
 
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({super.key});

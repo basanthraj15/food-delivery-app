@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/Pages/SplashScreen.dart';
+import 'package:food_delivery/Pages/MainScreens/Splashscreen.dart';
+
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 

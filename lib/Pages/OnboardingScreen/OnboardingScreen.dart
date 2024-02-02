@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/Pages/HomePage.dart';
-import 'package:food_delivery/Pages/LoginScreen.dart';
+import 'package:food_delivery/Pages/MainScreens/LoginScreen.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -120,15 +119,18 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       controller.animateToPage(selectPage,
                           duration: Duration(milliseconds: 300),
                           curve: Curves.easeInBack);
+                          SizedBox(height: 10);
                     });
                   }
                 },
+                
                 child: Text("Next"),
                 style: ElevatedButton.styleFrom(
                   fixedSize: Size(250, 50),
+                   foregroundColor: Colors.black,
                   backgroundColor: Color.fromRGBO(248, 198, 33, 1),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(15),
                   ),
                 ),
               ),

@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:food_delivery/Pages/HomePage.dart';
-import 'package:food_delivery/Pages/LoginScreen.dart';
+import 'package:food_delivery/Pages/MainScreens/LoginScreen.dart';
 import 'package:food_delivery/Pages/OnboardingScreen/OnboardingScreen.dart';
 import 'package:food_delivery/Pages/OtpScreen/VerifyPhoneNumberScreen.dart';
 import 'package:pinput/pinput.dart';
@@ -115,6 +114,7 @@ class _OtpScreenState extends State<OtpScreen> {
                         ),
                       ),
                       style: ElevatedButton.styleFrom(
+                         foregroundColor: Colors.black,
                         backgroundColor: Color.fromRGBO(248, 198, 33, 1),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),

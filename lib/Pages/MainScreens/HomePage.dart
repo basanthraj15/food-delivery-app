@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/Pages/NavBarScreen.dart';
-import 'package:food_delivery/Pages/NotificationScreen.dart';
-import 'package:food_delivery/Pages/OrdersScreen.dart';
-import 'package:food_delivery/Pages/PaymentScreen.dart';
+import 'package:food_delivery/Pages/UserScreen/NavBarScreen.dart';
+import 'package:food_delivery/Pages/UserScreen/NotificationScreen.dart';
+import 'package:food_delivery/Pages/UserScreen/OrdersScreen.dart';
+import 'package:food_delivery/Pages/UserScreen/PaymentScreen.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class HomePage extends StatefulWidget {

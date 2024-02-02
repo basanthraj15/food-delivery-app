@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/Pages/HomePage.dart';
-import 'package:food_delivery/Pages/LoginScreen.dart';
-import 'package:food_delivery/Pages/PaymentScreen.dart';
+import 'package:food_delivery/Pages/MainScreens/HomePage.dart';
+import 'package:food_delivery/Pages/MainScreens/LoginScreen.dart';
+import 'package:food_delivery/Pages/UserScreen/PaymentScreen.dart';
 
 
 class NavBar extends StatelessWidget {

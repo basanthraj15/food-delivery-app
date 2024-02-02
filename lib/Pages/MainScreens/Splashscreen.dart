@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:food_delivery/Pages/HomePage.dart';
-import 'package:food_delivery/Pages/LoginScreen.dart';
 import 'package:food_delivery/Pages/OnboardingScreen/OnboardingScreen.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -27,6 +25,7 @@ class SplashScreen extends StatelessWidget {
               child: Text("Get Started"),
               style: ElevatedButton.styleFrom(
                 fixedSize: Size(150, 50),
+                 foregroundColor: Colors.black,
                 backgroundColor: Color.fromRGBO(248, 198, 33, 1),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),

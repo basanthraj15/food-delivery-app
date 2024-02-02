@@ -1,6 +1,6 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
-import 'package:food_delivery/Pages/HomePage.dart';
+import 'package:food_delivery/Pages/MainScreens/HomePage.dart';
 import 'package:food_delivery/Pages/OtpScreen/VerifyPhoneNumberScreen.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
