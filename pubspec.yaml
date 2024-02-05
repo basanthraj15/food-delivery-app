@@ -89,7 +89,7 @@ flutter:
    - assets\on_boarding_3.png
    - assets\lock.png
    - assets\User.png
-  
+   - assets\offer.PNG
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery/Controller/user_controller.dart';
 import 'package:food_delivery/Pages/MainScreens/HomePage.dart';
 import 'package:food_delivery/Pages/MainScreens/LoginScreen.dart';
+import 'package:food_delivery/Pages/UserScreen/NotificationScreen.dart';
 import 'package:food_delivery/Pages/UserScreen/PaymentScreen.dart';
 
 class NavBar extends StatelessWidget {
@@ -68,11 +69,11 @@ class NavBar extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.notifications),
               title: Text('Notifications'),
-              onTap: () => null,
-              /* Navigator.push(
+              onTap: () => 
+              Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => NotificationScreen()),
-              ), */
+              ),
               trailing: ClipOval(
                 child: Container(
                     color: Colors.red,

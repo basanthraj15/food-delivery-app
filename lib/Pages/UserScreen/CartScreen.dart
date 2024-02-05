@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/Pages/MainScreens/HomePage.dart';
 
-import 'package:food_delivery/Pages/UserScreen/NavBarScreen.dart';
-
-class NotificationScreen extends StatelessWidget {
-  const NotificationScreen({super.key});
+class CartScreen extends StatelessWidget {
+  const CartScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +12,7 @@ class NotificationScreen extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => NavBar()),
+              MaterialPageRoute(builder: (context) => HomePage()),
             );
           },
           icon: Icon(
