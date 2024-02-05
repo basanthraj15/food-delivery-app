@@ -90,6 +90,12 @@ flutter:
    - assets\lock.png
    - assets\User.png
    - assets\offer.PNG
+   - assets\biriyani.jpg
+   - assets\pizza.png
+   - assets\burger.png
+   - assets\cake.png
+   - assets\coffee.png
+   - assets\icecream.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

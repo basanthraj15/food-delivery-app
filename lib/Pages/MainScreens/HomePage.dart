@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/Controller/user_controller.dart';
 import 'package:food_delivery/Pages/UserScreen/CartScreen.dart';
+import 'package:food_delivery/Pages/UserScreen/CategoryScreen.dart';
 import 'package:food_delivery/Pages/UserScreen/NavBarScreen.dart';
 import 'package:food_delivery/Pages/UserScreen/NotificationScreen.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -83,10 +84,10 @@ final List<Widget> _pages =[
       body: Padding(
         padding: const EdgeInsets.only(left: 15, right: 10, top: 0, bottom: 0),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Text('Deliver to'),
+          Text('Deliver To',style: TextStyle(fontFamily: ('font'),fontWeight:FontWeight.bold,fontSize: 20)),
           Row(
             children: [
-              Icon(Icons.location_on, size: 20, color: Colors.black),
+              Icon(Icons.location_on, size: 20, color: Color.fromRGBO(248, 198, 33, 1)),
               Text(
                 'My Home',
                 style: TextStyle(fontSize: 15),
@@ -136,6 +137,22 @@ final List<Widget> _pages =[
               ),
             ),
           ),
+          Divider(),
+          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('Food Delivery',style: TextStyle(fontFamily: ('font'),fontWeight:FontWeight.bold,fontSize: 20),
+
+              ),Row(children: [Text('See more',style: TextStyle(fontWeight: FontWeight.bold,color:  Color.fromRGBO(248, 198, 33, 1)),),
+              Icon(Icons.east_sharp,size:20,color:  Color.fromRGBO(248, 198, 33, 1),),],)
+              
+            ],
+
+
+          ),
+          SizedBox(height: 5,),
+          CategoryScreen(),
+          Divider(),
+
         ]),
       ),
       bottomNavigationBar: Container(
