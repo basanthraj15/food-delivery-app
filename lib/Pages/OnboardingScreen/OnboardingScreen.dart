@@ -124,6 +124,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   }
                 },
                 
+                
                 child: Text("Next"),
                 style: ElevatedButton.styleFrom(
                   fixedSize: Size(250, 50),

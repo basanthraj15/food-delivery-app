@@ -110,10 +110,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 color: Colors.grey.withOpacity(.4),
                 child: Column(
                   children: [
+                    
                     Padding(
                       padding:
                           const EdgeInsets.only(left: 8.0, right: 8.0, top: 30),
                       child: TextFormField(
+                        
                         controller: _emailcontroller,
                         keyboardType: TextInputType.text,
                         decoration: InputDecoration(
