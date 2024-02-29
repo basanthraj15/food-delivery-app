@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/Pages/MainScreens/HomePage.dart';
+import 'package:food_delivery/Pages/UserScreen/PaymentoptionScreen.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 
 class PaymentScreen extends StatefulWidget {
@@ -36,7 +36,6 @@ class _PaymentScreenState extends State<PaymentScreen> {
   }
 
   final _amountcontroller = TextEditingController();
-  
 
   showAlertDialog(BuildContext context, String message, String heading,
       String buttonAcceptTitle, String buttonCancelTitle) {
@@ -52,7 +51,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
       onPressed: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => HomePage()),
+          MaterialPageRoute(builder: (context) => PaymentOptionScreen()),
         );
       },
     );
@@ -131,10 +130,10 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   var options = {
                     'key': "rzp_test_qk1dk4sV8VdXcP",
 
-                    'amount':num.parse(_amountcontroller.text) * 100, //ammount will be multiple of 100 ie 100=10000
+                    'amount': num.parse(_amountcontroller.text) *
+                        100, //ammount will be multiple of 100 ie 100=10000
                     'name': 'Basanth',
-                    'order_id':
-                        'order_EMBFqjDHEEn80l', 
+                    'order_id': 'order_EMBFqjDHEEn80l',
                     'description': 'Food Delivery',
                     'timeout': 300, // in seconds
                     'prefill': {

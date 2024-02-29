@@ -4,6 +4,7 @@ import 'package:food_delivery/Pages/MainScreens/HomePage.dart';
 import 'package:food_delivery/Pages/MainScreens/LoginScreen.dart';
 import 'package:food_delivery/Pages/UserScreen/NotificationScreen.dart';
 import 'package:food_delivery/Pages/UserScreen/PaymentScreen.dart';
+import 'package:food_delivery/Pages/UserScreen/PaymentoptionScreen.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({super.key});
@@ -113,7 +114,7 @@ class NavBar extends StatelessWidget {
                 onTap: () async {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => PaymentScreen()),
+                    MaterialPageRoute(builder: (context) => PaymentOptionScreen()),
                   );
                 }),
             Divider(),
