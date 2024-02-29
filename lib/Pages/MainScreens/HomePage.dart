@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/Controller/user_controller.dart';
 import 'package:food_delivery/Pages/UserScreen/CartScreen.dart';
 import 'package:food_delivery/Pages/UserScreen/CategoryScreen.dart';
 import 'package:food_delivery/Pages/UserScreen/NavBarScreen.dart';
-import 'package:food_delivery/Pages/UserScreen/NotificationScreen.dart';
 import 'package:food_delivery/Pages/UserScreen/ProductScreen.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 

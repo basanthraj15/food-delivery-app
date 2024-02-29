@@ -1,9 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/Pages/MainScreens/HomePage.dart';
+import 'package:razorpay_flutter/razorpay_flutter.dart';
 
-class PaymentScreen extends StatelessWidget {
-  PaymentScreen({super.key});
+class PaymentScreen extends StatefulWidget {
+  const PaymentScreen({super.key});
+
+  @override
+  State<PaymentScreen> createState() => _PaymentScreenState();
+}
+
+class _PaymentScreenState extends State<PaymentScreen> {
+  var _razorpay = Razorpay();
+
+  @override
+  void initState() {
+    _razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS, _handlePaymentSuccess);
+    _razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, _handlePaymentError);
+    _razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET, _handleExternalWallet);
+
+    super.initState();
+  }
+
+  void _handlePaymentSuccess(PaymentSuccessResponse response) {
+    // Do something when payment succeeds
+    print("payment success");
+  }
+
+  void _handlePaymentError(PaymentFailureResponse response) {
+    // Do something when payment fails
+    print("payment Failed");
+  }
+
+  void _handleExternalWallet(ExternalWalletResponse response) {
+    // Do something when an external wallet is selected
+  }
+
   final _amountcontroller = TextEditingController();
+  
 
   showAlertDialog(BuildContext context, String message, String heading,
       String buttonAcceptTitle, String buttonCancelTitle) {
@@ -95,10 +128,21 @@ class PaymentScreen extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => HomePage()),
-                  );
+                  var options = {
+                    'key': "rzp_test_qk1dk4sV8VdXcP",
+
+                    'amount':num.parse(_amountcontroller.text) * 100, //ammount will be multiple of 100 ie 100=10000
+                    'name': 'Basanth',
+                    'order_id':
+                        'order_EMBFqjDHEEn80l', 
+                    'description': 'Food Delivery',
+                    'timeout': 300, // in seconds
+                    'prefill': {
+                      'contact': '9000000000',
+                      'email': 'foodie@examplemail.com'
+                    }
+                  };
+                  _razorpay.open(options);
                 },
                 child: Text("Make Payment"),
                 style: ElevatedButton.styleFrom(
@@ -112,5 +156,11 @@ class PaymentScreen extends StatelessWidget {
             ],
           ),
         )));
+  }
+
+  @override
+  void dispose() {
+    _razorpay.clear(); // Removes all listeners
+    super.dispose();
   }
 }
