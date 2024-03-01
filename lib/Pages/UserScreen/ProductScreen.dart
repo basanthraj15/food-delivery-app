@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:input_quantity/input_quantity.dart';
 import 'package:quantity_input/quantity_input.dart';
 
 class ProductScreen extends StatefulWidget {
