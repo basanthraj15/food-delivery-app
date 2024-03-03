@@ -11,8 +11,8 @@ class ProductScreen extends StatefulWidget {
 class _ProductScreen extends State<ProductScreen> {
   int simpleIntInput1 = 0;
   int simpleIntInput2 = 0;
-   int simpleIntInput3 = 0;
-    int simpleIntInput4 = 0;
+  int simpleIntInput3 = 0;
+  int simpleIntInput4 = 0;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -65,8 +65,7 @@ class _ProductScreen extends State<ProductScreen> {
                               Text('5Km'),
                             ]),
                       ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min, children: [
+                      Row(mainAxisSize: MainAxisSize.min, children: [
                         QuantityInput(
                             inputWidth: 5,
                             iconColor: Colors.black,
@@ -85,7 +84,6 @@ class _ProductScreen extends State<ProductScreen> {
                           ),
                         )
                       ]),
-                     
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -96,7 +94,6 @@ class _ProductScreen extends State<ProductScreen> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                        
                         ],
                       ),
                     ],
@@ -147,8 +144,7 @@ class _ProductScreen extends State<ProductScreen> {
                               Text('10Km'),
                             ]),
                       ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min, children: [
+                      Row(mainAxisSize: MainAxisSize.min, children: [
                         QuantityInput(
                             inputWidth: 5,
                             iconColor: Colors.black,
@@ -227,8 +223,7 @@ class _ProductScreen extends State<ProductScreen> {
                               Text('5Km'),
                             ]),
                       ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min, children: [
+                      Row(mainAxisSize: MainAxisSize.min, children: [
                         QuantityInput(
                             inputWidth: 5,
                             iconColor: Colors.black,
@@ -307,8 +302,7 @@ class _ProductScreen extends State<ProductScreen> {
                               Text('2Km'),
                             ]),
                       ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min, children: [
+                      Row(mainAxisSize: MainAxisSize.min, children: [
                         QuantityInput(
                             inputWidth: 5,
                             iconColor: Colors.black,

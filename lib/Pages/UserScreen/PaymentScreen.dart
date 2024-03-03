@@ -11,6 +11,9 @@ class PaymentScreen extends StatefulWidget {
 
 class _PaymentScreenState extends State<PaymentScreen> {
   var _razorpay = Razorpay();
+ final amountcontroller = TextEditingController();
+ TextEditingController textEditingController = new TextEditingController();
+
 
   @override
   void initState() {
@@ -35,7 +38,6 @@ class _PaymentScreenState extends State<PaymentScreen> {
     // Do something when an external wallet is selected
   }
 
-  final _amountcontroller = TextEditingController();
 
   showAlertDialog(BuildContext context, String message, String heading,
       String buttonAcceptTitle, String buttonCancelTitle) {
@@ -108,7 +110,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 padding: const EdgeInsets.only(left: 8.0, right: 8.0, top: 15),
                 child: TextField(
                   keyboardType: TextInputType.number,
-                  controller: _amountcontroller,
+                  controller: amountcontroller,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15.0),
@@ -130,12 +132,11 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   var options = {
                     'key': "rzp_test_qk1dk4sV8VdXcP",
 
-                    'amount': num.parse(_amountcontroller.text) *
-                        100, //ammount will be multiple of 100 ie 100=10000
-                    'name': 'Basanth',
+                    'amount': num.parse(amountcontroller.text) *100, //ammount will be multiple of 100 ie 100=10000
+                    'name': 'Foodiee',
                     'order_id': 'order_EMBFqjDHEEn80l',
                     'description': 'Food Delivery',
-                    'timeout': 300, // in seconds
+                    'timeout': 240, // in seconds
                     'prefill': {
                       'contact': '9000000000',
                       'email': 'foodie@examplemail.com'

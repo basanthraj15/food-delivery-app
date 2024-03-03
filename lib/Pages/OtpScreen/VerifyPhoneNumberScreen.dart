@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-
+import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:food_delivery/Pages/MainScreens/LoginScreen.dart';
 import 'package:food_delivery/Pages/OtpScreen/OtpScreen.dart';
 
@@ -19,6 +18,8 @@ class _VerifyNumberState extends State<VerifyNumber> {
   final _PhoneNumbercontroller = TextEditingController();
 
   TextEditingController CountryCode = TextEditingController();
+
+  FocusNode focusNode = FocusNode();
   @override
   void initState() {
     // TODO: implement initState
@@ -69,7 +70,7 @@ class _VerifyNumberState extends State<VerifyNumber> {
                   SizedBox(
                     height: 50,
                   ),
-                  Container(
+/*                   Container(
                     height: 55,
                     decoration: BoxDecoration(
                         border: Border.all(width: 1, color: Colors.grey),
@@ -106,6 +107,23 @@ class _VerifyNumberState extends State<VerifyNumber> {
                         ),
                       ],
                     ),
+                  ),
+ */
+                  IntlPhoneField(
+                    focusNode: focusNode,
+                    decoration: InputDecoration(
+                      labelText: 'Phone Number',
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(),
+                      ),
+                    ),
+                    languageCode: "en",
+                    onChanged: (phone) {
+                      print(phone.completeNumber);
+                    },
+                    onCountryChanged: (country) {
+                      print('Country changed to: ' + country.name);
+                    },
                   ),
                   SizedBox(height: 30),
                   SizedBox(

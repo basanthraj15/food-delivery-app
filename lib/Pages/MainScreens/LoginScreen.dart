@@ -15,6 +15,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
   bool isChecked = false;
   bool _isSecurePassword = true;
   final _emailcontroller = TextEditingController();
@@ -178,9 +179,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                 builder: (context) => const HomePage()),
                           );
                           login();
-
+      
                           registerUser();
-
+      
                           /*  {
                             if(formKey.currentState!.validate()){
                               final SnackBar = SnackBar(content: Text("Please wait"));
