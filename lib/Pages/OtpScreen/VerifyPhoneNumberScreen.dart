@@ -15,7 +15,7 @@ class VerifyNumber extends StatefulWidget {
 }
 
 class _VerifyNumberState extends State<VerifyNumber> {
-  final _PhoneNumbercontroller = TextEditingController();
+  TextEditingController _PhoneNumbercontroller = TextEditingController();
 
   TextEditingController CountryCode = TextEditingController();
 
@@ -70,47 +70,9 @@ class _VerifyNumberState extends State<VerifyNumber> {
                   SizedBox(
                     height: 50,
                   ),
-/*                   Container(
-                    height: 55,
-                    decoration: BoxDecoration(
-                        border: Border.all(width: 1, color: Colors.grey),
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width: 40,
-                          child: TextField(
-                            controller: CountryCode,
-                            decoration:
-                                InputDecoration(border: InputBorder.none),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        SizedBox(width: 5),
-                        Text("|",
-                            style: TextStyle(fontSize: 40, color: Colors.grey)),
-                        SizedBox(width: 5),
-                        Expanded(
-                          child: TextField(
-                            inputFormatters: [
-                              FilteringTextInputFormatter.digitsOnly,
-                              LengthLimitingTextInputFormatter(10),
-                            ],
-                            keyboardType: TextInputType.number,
-                            decoration: InputDecoration(
-                                border: InputBorder.none,
-                                hintText: "Phone Number"),
-                            controller: _PhoneNumbercontroller,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
- */
                   IntlPhoneField(
                     focusNode: focusNode,
+                    controller: _PhoneNumbercontroller,
                     decoration: InputDecoration(
                       labelText: 'Phone Number',
                       border: OutlineInputBorder(
