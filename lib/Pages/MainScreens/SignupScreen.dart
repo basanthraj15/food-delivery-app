@@ -20,10 +20,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
   bool isChecked = false;
   bool _isSecurePassword = true;
 
+ 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
+         
       child: SafeArea(
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 30),
