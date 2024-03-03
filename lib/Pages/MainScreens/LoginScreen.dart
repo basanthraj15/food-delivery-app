@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery/Controller/user_controller.dart';
 import 'package:food_delivery/Pages/MainScreens/HomePage.dart';
+import 'package:food_delivery/Pages/MainScreens/SignupScreen.dart';
 import 'package:food_delivery/Pages/OtpScreen/VerifyPhoneNumberScreen.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -343,11 +344,11 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           TextButton(
                             onPressed: () {
-                              /* Navigator.push(
+                              Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => SignupScreen()),
-                              ); */
+                                    builder: (context) => SignUpScreen()),
+                              );
                             },
                             child: Text(
                               'Sign up',

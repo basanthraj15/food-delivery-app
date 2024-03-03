@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/Pages/MainScreens/HomePage.dart';
 import 'package:food_delivery/Pages/UserScreen/PaymentScreen.dart';
 
 class PaymentOptionScreen extends StatefulWidget {
@@ -18,7 +19,7 @@ class _PaymentOptionScreen extends State<PaymentOptionScreen> {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => PaymentScreen()),
+              MaterialPageRoute(builder: (context) => HomePage()),
             );
           },
           icon: Icon(
